@@ -1,0 +1,14 @@
+﻿@model FitnessApp.Models.Athletes
+
+<h3>Adding a new Athlete</h3>
+
+<form asp-controller="Athletes" asp-action="SaveAthlete" method="post">
+    <input type="hidden" asp-for="coachid" value="@Model.coachid" />
+    <label for="firstname">First Name:</label><br />
+    <input type="text" asp-for="firstname" /><br />
+    <label for="lastname">Last Name:</label><br />
+    <input type="text" asp-for="lastname" /><br />
+    <label for="email">Email:</label><br />
+    <input type="text" asp-for="email" /><br />
+    <Button type="submit">Add Athlete</Button>
+</form>

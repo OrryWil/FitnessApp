@@ -1,0 +1,28 @@
+﻿@model FitnessApp.Models.Coaches
+
+
+<h3>Welcome, Coach @Model.lastname</h3>
+
+<h4>Athletes:</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Athletes in Model.Athletes)
+        {
+            <tr>
+                <td>@Athletes.firstname</td>
+                <td>@Athletes.lastname</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+    </table>
+    <a asp-controller="Athletes" asp-route-coachId="@Model.coachid"  asp-action="AddingAthlete">Add Athlete</a>
+
+
+
