@@ -19,6 +19,16 @@ The long-term goal is to make workout instructions more accessible by potentiall
 - **Entity Framework Core** – ORM used to interact with the database and manage data operations.
 - **HTML** – Used to structure the application's user interface.
 
+## Project Structure
+
+The application follows the ASP.NET Core MVC architecture.
+
+- **Controllers/** – Handles application requests and business logic.
+- **Models/** – Contains the data models used by the application.
+- **Views/** – Contains the Razor views used to display the user interface.
+- **Data/** – Contains the Entity Framework Core database context.
+- **SQL/** – Contains SQL scripts for creating database tables and inserting sample data.
+- **wwwroot/** – Contains static files such as CSS and JavaScript.
 
 ## Features
 
@@ -54,3 +64,25 @@ The database currently includes the following tables:
 
 Entity Framework Core is used to interact with the database through the application's data models and database context.
 
+### SQL Scripts
+
+The repository includes two SQL scripts:
+
+- **CreateTables.sql** – Contains the SQL statements to create the database tables and their relationships.
+- **InsertRows.sql** – Contains SQL INSERT statements to populate the database with sample records.
+
+These scripts can be executed in PostgreSQL when setting up the database.
+
+### Database Configuration
+
+Update the connection string in `appsettings.json` to match your local PostgreSQL configuration.
+
+Do not commit passwords or other sensitive credentials to the repository.
+
+### Running the Application
+
+1. Open the solution in Visual Studio.
+2. Restore NuGet packages if necessary.
+3. Verify that PostgreSQL is running.
+4. Build the solution.
+5. Run the application using Visual Studio.
