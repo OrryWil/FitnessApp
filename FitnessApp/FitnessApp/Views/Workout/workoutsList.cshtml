@@ -1,4 +1,5 @@
-﻿
+﻿@model List<FitnessApp.Models.WorkoutInfo>
+
 
 <h4>Athletes:</h4>
 <table class="table">
@@ -11,15 +12,15 @@
         </tr>
     </thead>
     <tbody>
-        @*@foreach (var Athletes in Model.Athletes)
-        {*@
+        @foreach (var WorkoutInfo in Model)
+        {
             <tr>
-                <td></td>
+                <td>@WorkoutInfo.workoutname</td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
-        @*}*@
+        }
     </tbody>
 </table>
 
