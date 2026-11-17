@@ -35,7 +35,7 @@ namespace FitnessApp.Controllers
                 .Where(c => c.coachid == CoachIDQuery)
                 .Select(c => new WorkoutInfo
                 {
-                    workoutid = c.workoutid,
+                    workoutinfoid = c.workoutinfoid,
                     coachid = c.coachid,
                     workoutname = c.workoutname,
                     workoutdate = c.workoutdate

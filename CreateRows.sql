@@ -11,7 +11,7 @@ INSERT INTO Exercises (ExerciseName)
 VALUES ('Bench Press'), ('Squat');
 
 -- MuscleGroups
-INSERT INTO MuscleGroup (MuscleName)
+/*INSERT INTO MuscleGroup (MuscleName)
 VALUES 
 ('Chest'), ('Back'), ('Biceps'), ('Triceps'), 
 ('Quadriceps'), ('Hamstrings'), ('Glutes'), ('Shoulders'), 
@@ -27,14 +27,19 @@ VALUES
 (2, 5), -- Squat -> Quadriceps
 (2,6),  -- Squat -> Hamstrings
 (2, 7); -- Squat -> Glutes
+*/
+-- Workouts 
+INSERT INTO workoutinfo(coachid, workoutname, workoutdate)
+VALUES(1,'LegDay1','2027-09-10');
 
--- Workouts (Summary / Header Info)
-INSERT INTO workoutinfo (CoachID, AthleteID, WorkoutID, WorkoutName, IsCompleted, WorkoutDate)
-VALUES (1, 1, 1, 'LegDay1', False, '2027-09-10');
+-- Workout Details 
+INSERT INTO workouts(workoutinfoid, workoutgroup, exerciseid, workoutsets, workoutreps)
+VALUES(1,1,2,5,10);
 
--- Workout Details (Sets, Reps, Weight)
-INSERT INTO workouts (WorkoutID, WorkoutGroup, ExerciseID, SetNumber, Reps, Weight)
-VALUES (1, 1, 2, 5, 10, 225);
+-- Workout Assignment 
+INSERT INTO workoutassignments(workoutinfoid, athleteid)
+VALUES(1,1);
 
-SELECT *
-FROM workouts;
+--Workout results
+INSERT INTO workoutresults(workoutid, assignmentid, askedweight, actualweightdone, completed)
+VALUES(1,1,225,NULL, FALSE);
