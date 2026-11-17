@@ -10,6 +10,7 @@ namespace FitnessApp.Models
         public string workoutname { get; set; }
         public DateTime workoutdate { get; set; }
         public List<WorkoutAssignments> workoutassignments { get; set; }
+        public List<Workouts> workouts { get; set; }
 
     }
 }

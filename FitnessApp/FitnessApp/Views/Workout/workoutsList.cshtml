@@ -16,13 +16,25 @@
         {
             <tr>
                 <td>@WorkoutInfo.workoutname</td>
-                <td>@foreach (var workAssignment in WorkoutInfo.workoutassignments)
+               
+                <td>
+                    @foreach (var workAssignment in WorkoutInfo.workoutassignments)
                     {
-                      <p>@workAssignment.athlete.firstname @workAssignment.athlete.lastname</p>  
+                        @workAssignment.athlete.firstname @workAssignment.athlete.lastname
                     }
-
                 </td>
-                <td></td>
+                <td>
+                    @foreach (var workAssignment in WorkoutInfo.workoutassignments)
+                    {
+                        @if(!workAssignment.workoutresults.All(r => r.completed))
+                        {
+                            
+                            @workAssignment.athlete.firstname
+                            @workAssignment.athlete.lastname
+                            
+                        }
+                     }
+                </td>
                 <td></td>
             </tr>
         }

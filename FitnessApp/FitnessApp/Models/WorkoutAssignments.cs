@@ -9,5 +9,6 @@ namespace FitnessApp.Models
         public int workoutinfoid { get; set; }
         public int athleteid { get; set; }
         public Athletes athlete { get; set; }
+        public List<WorkoutResults> workoutresults { get; set; }
     }
 }

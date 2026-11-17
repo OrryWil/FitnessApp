@@ -46,7 +46,13 @@ namespace FitnessApp.Controllers
                             assignmentid = a.assignmentid,
                             workoutinfoid = a.workoutinfoid,
                             athleteid = a.athleteid,
-                            athlete = _context.athletes.FirstOrDefault(ath => ath.athleteid == a.athleteid)
+                            athlete = _context.athletes.FirstOrDefault(ath => ath.athleteid == a.athleteid),
+                            workoutresults = _context.workoutresults
+                                .Where(r => r.assignmentid == a.assignmentid)
+                                .Select(r => new WorkoutResults
+                                {
+                                    completed = r.completed
+                                }).ToList()
                         }).ToList()
 
                 }).ToListAsync();
