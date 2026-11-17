@@ -14,6 +14,7 @@ namespace FitnessApp.Data
         public DbSet<Athletes> athletes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<WorkoutInfo> workoutinfo { get; set; }
+        public DbSet<WorkoutAssignments> workoutassignments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

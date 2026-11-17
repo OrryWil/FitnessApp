@@ -16,7 +16,12 @@
         {
             <tr>
                 <td>@WorkoutInfo.workoutname</td>
-                <td></td>
+                <td>@foreach (var workAssignment in WorkoutInfo.workoutassignments)
+                    {
+                      <p>@workAssignment.athlete.firstname @workAssignment.athlete.lastname</p>  
+                    }
+
+                </td>
                 <td></td>
                 <td></td>
             </tr>

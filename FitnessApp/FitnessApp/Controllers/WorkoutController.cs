@@ -38,9 +38,20 @@ namespace FitnessApp.Controllers
                     workoutinfoid = c.workoutinfoid,
                     coachid = c.coachid,
                     workoutname = c.workoutname,
-                    workoutdate = c.workoutdate
+                    workoutdate = c.workoutdate,
+                    workoutassignments= _context.workoutassignments
+                        .Where(a => a.workoutinfoid == c.workoutinfoid)
+                        .Select(a => new WorkoutAssignments
+                        {
+                            assignmentid = a.assignmentid,
+                            workoutinfoid = a.workoutinfoid,
+                            athleteid = a.athleteid,
+                            athlete = _context.athletes.FirstOrDefault(ath => ath.athleteid == a.athleteid)
+                        }).ToList()
 
                 }).ToListAsync();
+            
         }
+        
     }
 }

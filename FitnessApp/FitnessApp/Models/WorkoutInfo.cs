@@ -9,7 +9,7 @@ namespace FitnessApp.Models
         public int coachid { get; set; }
         public string workoutname { get; set; }
         public DateTime workoutdate { get; set; }
-
+        public List<WorkoutAssignments> workoutassignments { get; set; }
 
     }
 }
